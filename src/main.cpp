@@ -61,12 +61,12 @@ static void notifyCallback(BLERemoteCharacteristic *pBLERemoteCharacteristic, ui
 
     if (pData[length - 1] == '@')
     {
-      String mult_value = granboard->convertNotifToValue(rcvNotif);
+      String mult_value = rcvNotif;
 
       if (mult_value != "")
       {
         // Send to Serial to Be Used by Other App
-        Serial.println("<" + mult_value + ">");
+        Serial.println(mult_value);
 
         // Out detected
         if (mult_value == "OUT")
